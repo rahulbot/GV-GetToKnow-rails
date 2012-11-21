@@ -11,7 +11,7 @@ class Country < ActiveRecord::Base
         :title => details['title'],
         :author => details['author'],
         :link => details['link'],
-        :contentSnippet => details['contentSnippet']
+        :contentSnippet => details['contentSnippet'].html_safe
       }
     end
   end

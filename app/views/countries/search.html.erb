@@ -35,6 +35,7 @@
 
 <script type="text/javascript">
 $(function(){
+  // set up the country autofill
   $('#gv-country').typeahead({
     source:<%=@country_list.to_json.html_safe %>,
     updater:function (item) {
@@ -42,6 +43,11 @@ $(function(){
     }
   });
   $('#gv-country').focus();
+  <% if not @country.nil? %>
+  // center the map appropriately
+  var mapUrl = "http://maps.stamen.com/watercolor/embed#4/"+<%=@country.latitude%>+"/"+<%=@country.longitude%>;
+  $('#gv-map').attr('src',mapUrl);
+  <% end %>
 });
 </script>
 
