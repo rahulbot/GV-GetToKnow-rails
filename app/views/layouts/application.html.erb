@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Global Voices: Get To Know ________</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1;" />
+    <%= stylesheet_link_tag "application", :media => "all" %>
+</head>
+
+<body>
+
+<div id="app">
+  
+  <div id="gv-page">
+
+      <iframe class="hidden-phone" id="gv-map" src="http://maps.stamen.com/watercolor/embed#2/42.6/109.0"></iframe>
+
+      <div class="container">
+      
+          <%= yield %>
+
+          <div class="row" id="gv-footer">
+              <div class="span12">
+                  <div class="well">
+                  <b><a href="http://globalvoicesonline.org/">Global Voices</a> is a community of more than 500 bloggers and translators around the world who work together to bring you reports from blogs and citizen media everywhere, with emphasis on voices that are not ordinarily heard in international mainstream media.</b>
+                  </div>
+              </div>
+          </div>
+      
+      </div> 
+
+  </div>
+
+</div>
+
+<%= javascript_include_tag "application" %>
+<%= yield :javascript %>
+
+</body>
+
+</html>
